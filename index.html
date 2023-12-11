@@ -4,37 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="src/style.css">
     <title>Global Weather</title>
 </head>
 
 <body>
-    <header>
-        <form>
-            <input type="search" placeholder="Enter a city" required />
-            <input type="submit" value="search" />
-        </form>
-    </header>
-    <main>
-        <h1>Kyiv</h1>
-        <div>
-            <p>
-                Today 14:49, clear
-                <br />
-                Humidity: 66%, Wind: 3.13km/h
-            </p>
-        </div>
-        <div>
-            🌞 12°C
-        </div>
-    </main>
-    <footer>
-        <p>Coded by <a href="https://github.com/ResDrive" target="_blank">Tetiana Maksymets</a>, is
-            <a href="https://github.com/ResDrive/weather_app" target="_blank">open-sourced on GitHub</a> and
-            <a href="https://glweather.netlify.app/" target="_blank">hosted on Netlify</a>
+    <div class="app-container">
+        <header>
+            <form class="search-from">
+                <input type="search" placeholder="Enter a city" required class="search-from-input" />
+                <input type="submit" value="search" class="search-from-button" />
+            </form>
+        </header>
+        <main>
+            <div class="app-data">
+                <div>
+                    <h1 class="app-city-name">Kyiv</h1>
+                    <p class="app-city-details">
+                        Today 14:49, clear
+                        <br />
+                        Humidity: <strong>66%</strong>, Wind: <strong>3.13km/h</strong>
+                    </p>
+                </div>
+                <div class="app-city-temperature-container">
+                    <div class="app-city-temperature-icon">🌞</div>
+                    <div class="app-city-temperature-value">12</div>
+                    <div class="app-city-temperature-unit">°C</div>
+                </div>
+            </div>
+        </main>
 
-        </p>
-    </footer>
+        <footer>
+            <p>Coded by <a href="https://github.com/ResDrive" target="_blank">Tetiana Maksymets</a>, is
+                <a href="https://github.com/ResDrive/weather_app" target="_blank">open-sourced on GitHub</a> and
+                <a href="https://glweather.netlify.app/" target="_blank">hosted on Netlify</a>
+
+            </p>
+        </footer>
+    </div>
     <script src="src/app.js"></script>
 </body>
 
