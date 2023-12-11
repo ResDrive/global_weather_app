@@ -42,7 +42,7 @@ function displayReceivedWeather(response) {
                         class="app-city-temperature-icon">`;
     temperatureElement.innerHTML = Math.round(temperature);
   } else {
-    alert(`No data has been found. Please your refine search.`);
+    alert(`No data has been found. Please refine your search.`);
   }
 }
 
