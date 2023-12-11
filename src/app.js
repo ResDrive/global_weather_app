@@ -1,11 +1,41 @@
-function displayReceivedWeather(responce) {
+function formatDate(date) {
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${day} as of ${hours}:${minutes}`;
+}
+
+function displayReceivedWeather(response) {
+  console.log(response.data);
   let temperatureElement = document.querySelector("#city-temperature-value");
-  let temperature = responce.data.temperature.current;
+  let temperature = response.data.temperature.current;
   let cityElement = document.querySelector("#app-city-name");
-  let city = responce.data.city;
-  let country = responce.data.country;
+  let city = response.data.city;
+  let country = response.data.country;
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windSpeedElement = document.querySelector("#wind-speed");
+  let timeElement = document.querySelector("#time");
+  let date = new Date(response.data.time * 1000);
 
   cityElement.innerHTML = `${city}, ${country}`;
+  timeElement.innerHTML = formatDate(date);
+  descriptionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  windSpeedElement.innerHTML = `${response.data.wind.speed} km/h`;
   temperatureElement.innerHTML = Math.round(temperature);
 }
 
