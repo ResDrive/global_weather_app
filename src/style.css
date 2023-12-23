@@ -21,15 +21,20 @@ footer {
 }
 
 a {
-  color: #885df1;
+  color: #016eaf;
 }
 .app-container {
   background: #ffffff;
   max-width: 600px;
+  min-width: 400px;
   margin: 30px auto;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+}
+.search-from {
+  display: flex;
+  justify-content: space-between;
 }
 
 .search-from-input {
@@ -42,7 +47,7 @@ a {
 }
 
 .search-from-button {
-  background-color: #885df1;
+  background-color: #016eaf;
   color: #ffffff;
   border: none;
   border-radius: 6px;
@@ -106,15 +111,20 @@ a {
 }
 
 .weather-forecast-icon {
-  /* width: 100%; */
-  width: 88px;
+  width: 100%;
+  /* width: 88px;
   height: 88px;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto; */
 }
 
 .weather-forecast-temperatures {
-  font-size: 13px;
+  font-size: 16px;
+  color: #f65282;
+  font-weight: bold;
+}
+
+.forecast-temperature-max {
 }
 
 .forecast-temperature-min {
