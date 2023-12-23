@@ -93,3 +93,22 @@ a {
   font-size: 28px;
   margin-top: 6px;
 }
+
+.weather-forecast {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+}
+
+.weather-forecast-temperatures {
+  font-size: 13px;
+}
+
+.forecast-temperature-min {
+  opacity: 0.5;
+}
