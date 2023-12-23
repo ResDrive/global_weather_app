@@ -41,6 +41,8 @@ function displayReceivedWeather(response) {
     iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" alt=""
                         class="app-city-temperature-icon">`;
     temperatureElement.innerHTML = Math.round(temperature);
+
+    getForecast(response.data.city);
   } else {
     alert(`No data has been found. Please refine your search.`);
   }
@@ -60,7 +62,17 @@ function searchSubmitHandler(event) {
   searchCity(searchInput.value);
 }
 
-function displayForecast() {
+function getForecast(searchInputValue) {
+  let apiKey = "a9d6234fb74f04etfce33ccaod0a2fee";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${searchInputValue}&key=${apiKey}&units=metric`;
+  console.log(apiUrl);
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response);
+
   let daysMoc = [
     "Sunday",
     "Monday",
